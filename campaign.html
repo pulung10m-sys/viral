@@ -9,45 +9,40 @@ serverTimestamp
 
 window.simpanCampaign = async function(){
 
-const judul=document.getElementById("judul").value;
+let judul =
+document.getElementById("judul").value;
 
-const reward=document.getElementById("reward").value;
+let reward =
+document.getElementById("reward").value;
 
-const kategori=document.getElementById("kategori").value;
+let kategori =
+document.getElementById("kategori").value;
 
-const deskripsi=document.getElementById("deskripsi").value;
+let deskripsi =
+document.getElementById("deskripsi").value;
+
 
 try{
 
 await addDoc(
-
 collection(db,"campaigns"),
-
 {
-
-judul,
-
-reward,
-
-kategori,
-
-deskripsi,
-
+judul:judul,
+reward:reward,
+kategori:kategori,
+deskripsi:deskripsi,
 status:"Aktif",
-
 createdAt:serverTimestamp()
-
 }
-
 );
 
-alert("Campaign berhasil dibuat");
 
-location.reload();
+alert("Campaign berhasil disimpan");
 
-}catch(e){
 
-alert(e.message);
+}catch(error){
+
+alert(error.message);
 
 }
 
