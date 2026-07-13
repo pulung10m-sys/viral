@@ -1,12 +1,136 @@
 <!DOCTYPE html>
 <html lang="id">
-<header>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Viral - Platform Campaign Creator</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+color:#333;
+}
+
+nav{
+background:#1976d2;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:white;
+}
+
+.menu{
+list-style:none;
+display:flex;
+gap:18px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+background:#1976d2;
+color:white;
+padding:15px 35px;
+border-radius:8px;
+text-decoration:none;
+font-size:18px;
+}
+
+.fitur{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+text-align:center;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+}
+
+.menu{
+flex-direction:column;
+margin-top:15px;
+text-align:center;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
 
 <nav>
 
-<h2>Viral</h2>
+<div class="logo">Viral</div>
 
-<ul>
+<ul class="menu">
 
 <li><a href="#">Home</a></li>
 
@@ -16,43 +140,48 @@
 
 <li><a href="#">Brand</a></li>
 
-<li><a href="login.html">Login</a></li>
+<li><a href="#">Login</a></li>
 
-<li><a href="register.html">Daftar</a></li>
+<li><a href="#">Daftar</a></li>
 
 </ul>
 
 </nav>
 
-</header>
-
-</head>
-
-<body>
-
-<header>
-
-<h1>viral</h1>
-
-<p>Platform Campaign Creator Indonesia</p>
-
-</header>
-
 <section class="hero">
 
-<h2>Selamat Datang</h2>
+<h1>Platform Campaign Creator Indonesia</h1>
 
-<p>Menghubungkan Brand dan Creator dalam satu platform.</p>
+<p>Menghubungkan Brand dengan Content Creator secara mudah.</p>
 
-<a class="btn" href="#">Mulai Sekarang</a>
+<a href="#" class="btn">Mulai Sekarang</a>
+
+</section>
+
+<section class="fitur">
+
+<div class="card">
+<h3>Campaign</h3>
+<p>Temukan campaign terbaru setiap hari.</p>
+</div>
+
+<div class="card">
+<h3>Creator</h3>
+<p>Upload konten dan dapatkan penghasilan.</p>
+</div>
+
+<div class="card">
+<h3>Brand</h3>
+<p>Promosikan produk melalui ribuan creator.</p>
+</div>
 
 </section>
 
 <footer>
 
-©2026 viral
+©2026 Viral Platform
 
 </footer>
 
 </body>
-</html>
+                             </html>
