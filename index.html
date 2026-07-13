@@ -3,366 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viralin - Marketplace & Solusi Kampanye UGC Kreator Terbaik</title>
+    <title>Viralin - Jembatan Brand & Content Creator Terbesar</title>
     <style>
         :root {
-            --primary: #7c3aed; /* Ungu elektrik Viralin */
-            --accent: #ff007f; /* Pink neon Viralin */
+            --primary: #7c3aed;
+            --accent: #ff007f;
             --dark: #090d16;
             --card-bg: #131a2c;
             --text-light: #f8fafc;
             --text-gray: #94a3b8;
             --success: #10b981;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--dark);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* Navigasi */
-        header {
-            background: rgba(9, 13, 22, 0.9);
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #1e293b;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: 900;
-            color: var(--text-light);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--dark); color: var(--text-light); line-height: 1.6; }
+        header { background: rgba(9, 13, 22, 0.9); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(12px); }
+        .logo { font-size: 26px; font-weight: 900; color: var(--text-light); text-decoration: none; }
         .logo span { color: var(--accent); }
-
-        .nav-links a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: var(--text-gray);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
+        .nav-links a { margin-left: 25px; text-decoration: none; color: var(--text-gray); font-weight: 600; }
         .nav-links a:hover { color: var(--accent); }
-
-        .btn-nav {
-            background: linear-gradient(45px, var(--primary), var(--accent));
-            color: white !important;
-            padding: 10px 24px;
-            border-radius: 50px;
-            cursor: pointer;
-            border: none;
-            font-weight: 700;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            padding: 140px 8% 80px;
-            text-align: center;
-            background: radial-gradient(circle at top, rgba(124, 58, 237, 0.15) 0%, rgba(9, 13, 22, 0) 60%);
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            font-weight: 900;
-            max-width: 900px;
-            margin: 0 auto 25px;
-            line-height: 1.15;
-            letter-spacing: -1px;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(45px, #38bdf8, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 19px;
-            color: var(--text-gray);
-            max-width: 650px;
-            margin: 0 auto 40px;
-        }
-
-        .cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 16px 38px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-brand {
-            background-color: transparent;
-            color: white;
-            border: 2px solid #334155;
-        }
-
-        .btn-creator {
-            background: linear-gradient(45px, var(--primary), var(--accent));
-            color: white;
-        }
-
+        .btn-nav { background: linear-gradient(45px, var(--primary), var(--accent)); color: white; padding: 10px 24px; border-radius: 50px; cursor: pointer; border: none; font-weight: 700; }
+        .hero { padding: 140px 8% 80px; text-align: center; background: radial-gradient(circle at top, rgba(124, 58, 237, 0.15) 0%, rgba(9, 13, 22, 0) 60%); margin-top: 50px; }
+        .hero h1 { font-size: 52px; font-weight: 900; max-width: 900px; margin: 0 auto 25px; line-height: 1.15; }
+        .hero h1 span { background: linear-gradient(45px, #38bdf8, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 19px; color: var(--text-gray); max-width: 650px; margin: 0 auto 40px; }
+        .cta-group { display: flex; justify-content: center; gap: 20px; }
+        .btn { display: inline-block; padding: 16px 38px; text-decoration: none; border-radius: 50px; font-weight: 700; transition: all 0.3s; cursor: pointer; border: none; font-size: 16px; }
+        .btn-brand { background-color: transparent; color: white; border: 2px solid #334155; }
+        .btn-creator { background: linear-gradient(45px, var(--primary), var(--accent)); color: white; }
         .btn:hover { transform: translateY(-3px); opacity: 0.9; }
-
-        /* Brand Landing Bar */
-        .brand-landing {
-            padding: 40px 8%;
-            background: #070b12;
-            text-align: center;
-            border-bottom: 1px solid #1e293b;
-        }
-
-        .brand-landing p {
-            font-size: 14px;
-            color: var(--text-gray);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-        }
-
-        .brand-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            opacity: 0.6;
-        }
-
-        .brand-logo-item {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-light);
-            letter-spacing: 1px;
-        }
-
-        /* Tata Kelola Dua Sisi */
-        .solutions {
-            padding: 100px 8%;
-            background: #0c1220;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-gray);
-            margin-bottom: 60px;
-        }
-
-        .grid-two-side {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-
-        .side-card {
-            padding: 45px;
-            border-radius: 24px;
-            background: var(--card-bg);
-            border: 1px solid #1e293b;
-        }
-
+        .brand-landing { padding: 40px 8%; background: #070b12; text-align: center; border-bottom: 1px solid #1e293b; }
+        .brand-landing p { font-size: 14px; color: var(--text-gray); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
+        .brand-logos { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; opacity: 0.6; }
+        .brand-logo-item { font-size: 20px; font-weight: 700; color: var(--text-light); }
+        .solutions { padding: 100px 8%; background: #0c1220; }
+        .section-title { text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 15px; }
+        .section-subtitle { text-align: center; color: var(--text-gray); margin-bottom: 60px; }
+        .grid-two-side { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-bottom: 80px; }
+        .side-card { padding: 45px; border-radius: 24px; background: var(--card-bg); border: 1px solid #1e293b; }
         .side-card.brand-side { border-top: 5px solid #38bdf8; }
         .side-card.creator-side { border-top: 5px solid var(--accent); }
-
         .side-card h3 { font-size: 24px; margin-bottom: 20px; }
-
         .side-card ul { list-style: none; margin-bottom: 35px; }
-
-        .side-card ul li {
-            margin-bottom: 15px;
-            color: var(--text-gray);
-            display: flex;
-            align-items: center;
-        }
-
-        .side-card ul li::before {
-            content: "✦";
-            color: var(--accent);
-            margin-right: 12px;
-        }
-
-        /* Brief UGC & Campaign Section */
-        .campaign-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .campaign-card {
-            background: var(--card-bg);
-            border: 1px solid #1e293b;
-            border-radius: 20px;
-            padding: 30px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .badge-status {
-            position: absolute;
-            top: 25px;
-            right: 30px;
-            background: rgba(16, 185, 129, 0.2);
-            color: var(--success);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .brand-name {
-            color: #38bdf8;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .campaign-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .ugc-brief {
-            background: #090d16;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            border-left: 3px solid var(--primary);
-        }
-
+        .side-card ul li { margin-bottom: 15px; color: var(--text-gray); display: flex; align-items: center; }
+        .side-card ul li::before { content: "✦"; color: var(--accent); margin-right: 12px; }
+        .campaign-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .campaign-card { background: var(--card-bg); border: 1px solid #1e293b; border-radius: 20px; padding: 30px; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+        .badge-status { position: absolute; top: 25px; right: 30px; background: rgba(16, 185, 129, 0.2); color: var(--success); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+        .brand-name { color: #38bdf8; font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+        .campaign-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .ugc-brief { background: #090d16; padding: 15px; border-radius: 12px; margin-bottom: 20px; border-left: 3px solid var(--primary); }
         .ugc-brief p { font-size: 13px; color: var(--text-gray); margin-bottom: 5px; }
         .ugc-brief strong { color: var(--text-light); font-size: 13px; }
-
-        .campaign-info {
-            border-top: 1px solid #1e293b;
-            padding-top: 15px;
-            margin-bottom: 20px;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-
+        .campaign-info { border-top: 1px solid #1e293b; padding-top: 15px; margin-bottom: 20px; }
+        .info-row { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; }
         .info-row span:first-child { color: var(--text-gray); }
         .info-row span:last-child { font-weight: 600; }
-
         .reward { color: var(--accent); font-weight: 800 !important; }
-
-        /* Pop-up Modal Gateway System */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(5, 7, 12, 0.85);
-            backdrop-filter: blur(8px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-
-        .modal-box {
-            background: var(--card-bg);
-            border: 2px solid var(--primary);
-            padding: 40px;
-            border-radius: 24px;
-            max-width: 450px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 28px;
-            color: var(--text-gray);
-            cursor: pointer;
-        }
-
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 7, 12, 0.85); backdrop-filter: blur(8px); display: none; justify-content: center; align-items: center; z-index: 2000; }
+        .modal-box { background: var(--card-bg); border: 2px solid var(--primary); padding: 40px; border-radius: 24px; max-width: 450px; width: 90%; text-align: center; position: relative; }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 28px; color: var(--text-gray); cursor: pointer; }
         .modal-box h3 { font-size: 24px; margin-bottom: 15px; }
         .modal-box p { color: var(--text-gray); margin-bottom: 30px; }
-
-        .modal-options {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .opt-btn {
-            padding: 14px;
-            border-radius: 12px;
-            font-weight: 700;
-            text-decoration: none;
-            display: block;
-            transition: all 0.2s;
-        }
-
+        .modal-options { display: flex; flex-direction: column; gap: 15px; }
+        .opt-btn { padding: 14px; border-radius: 12px; font-weight: 700; text-decoration: none; display: block; text-align: center; }
         .opt-register { background: var(--primary); color: white; }
         .opt-login { background: transparent; color: white; border: 2px solid #334155; }
-        .opt-register:hover { background: #6d28d9; }
-        .opt-login:hover { background: #1e293b; }
-
-        footer {
-            background: var(--dark);
-            color: var(--text-gray);
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 14px;
-            border-top: 1px solid #1e293b;
-        }
-
+        footer { background: var(--dark); color: var(--text-gray); text-align: center; padding: 40px 20px; font-size: 14px; border-top: 1px solid #1e293b; }
         footer p span { color: var(--accent); font-weight: bold; }
-        
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 34px; } .grid-two-side { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Viralin<span>.</span></a>
+        <nav class="nav-links">
+            <a href="#solusi">Layanan</a>
+            <a href="#campaign">Brief Konten</a>
+            <button class="btn-nav" onclick="openGate('Pengguna')">Masuk / Daftar</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Jembatan Terbaik Antara <span>Brand Hebat</span> & <span>Kreator Konten Viral</span></h1>
+        <p>Satu platform terintegrasi untuk membantu brand meluncurkan kampanye UGC berdampak tinggi, sekaligus membuka ruang monetisasi terluas bagi kreator konten.</p>
+        <div class="cta-group">
+            <button class="btn btn-brand" onclick="openGate('Brand')">Kami Sebuah Brand</button>
+            <button class="btn btn-creator" onclick="openGate('Kreator')">Saya Seorang Kreator</button>
+        </div>
+    </section>
+
+    <section class="brand-landing">
+        <p>Telah Dipercaya oleh Brand Terkemuka</p>
+        <div class="brand-logos">
+            <div class="brand-logo-item">GLOWUP.CO</div>
+            <div class="brand-logo-item">SKENA_COFFEE</div>
+            <div class="brand-logo-item">TECHGEAR</div>
+            <div class="brand-logo-item">FASHIONHUB</div>
+        </div>
+    </section>
+
+    <section class="solutions" id="solusi">
+        <h2 class="section-title">Satu Ekosistem, Dua Solusi Hebat</h2>
+        <p class="section-subtitle">Bagaimana kami mengelola kolaborasi komprehensif antara bisnis dan kreator</p>
+        <div class="grid-two-side">
+            <div class="side-card brand-side">
+                <h3>Untuk Brand & Pemilik Bisnis</h3>
+                <ul>
+                    <li>Akses ke database ribuan kreator media sosial tervalidasi.</li>
+                    <li>Sistem pembuatan brief UGC mandiri yang terarah.</li>
+                    <li>Pemantauan metrik performa konten secara real-time.</li>
+                </ul>
+                <button class="btn btn-brand" style="width:100%; margin-top:20px;" onclick="openGate('Brand')">Mulai Cari Kreator</button>
+            </div>
+            <div class="side-card creator-side">
+                <h3>Untuk Content Creator</h3>
+                <ul>
+                    <li>Akses bebas ke puluhan brief campaign UGC aktif.</li>
+                    <li>Kebebasan mengajukan penawaran rate card transparan.</li>
+                    <li>Sistem kontrak digital aman yang melindungi hak pembayaran.</li>
+                </ul>
+                <button class="btn btn-creator" style="width:100%; margin-top:20px;" onclick="openGate('Kreator')">Dapatkan Campaign</button>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="campaign">🔥 Campaign & Contoh Brief UGC Aktif</h2>
+        <p class="section-subtitle">Pelajari instruksi konten dan ambil proyek yang paling sesuai</p>
+        <div class="campaign-grid">
+            <div class="campaign-card">
+                <div>
+                    <span class="badge-status">Tersedia</span>
+                    <p class="brand-name">GlowUp Cosmetics</p>
+                    <h3 class="campaign-title">Review Sunscreen Serum</h3>
+                    <div class="ugc-brief">
