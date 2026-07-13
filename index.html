@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  
-  <link rel="stylesheet" href="style.css">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Viral - Platform Campaign Creator</title>
+<title>Viral - Platform Campaign Creator Indonesia</title>
+
+<link rel="stylesheet" href="style.css">
 
 <style>
 
@@ -19,106 +20,190 @@ font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-background:#f5f7fb;
+background:#f4f7fb;
 color:#333;
 }
 
 nav{
-background:#1976d2;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px;
+
+padding:15px 50px;
+
+background:#1565c0;
+
+position:sticky;
+top:0;
+z-index:999;
+
 }
 
 .logo{
-font-size:28px;
+
+font-size:30px;
 font-weight:bold;
 color:white;
+
 }
 
 .menu{
-list-style:none;
+
 display:flex;
-gap:18px;
+list-style:none;
+gap:25px;
+
 }
 
-.menu a{
+.menu li a{
+
 color:white;
 text-decoration:none;
 font-weight:bold;
+transition:.3s;
+
+}
+
+.menu li a:hover{
+
+color:#ffe082;
+
 }
 
 .hero{
+
+padding:90px 20px;
 text-align:center;
-padding:80px 20px;
+background:linear-gradient(135deg,#1565c0,#42a5f5);
+color:white;
+
 }
 
 .hero h1{
-font-size:42px;
+
+font-size:48px;
 margin-bottom:20px;
+
 }
 
 .hero p{
+
 font-size:20px;
 margin-bottom:35px;
+
 }
 
 .btn{
+
 display:inline-block;
-background:#1976d2;
-color:white;
 padding:15px 35px;
-border-radius:8px;
+background:white;
+color:#1565c0;
 text-decoration:none;
-font-size:18px;
+font-weight:bold;
+border-radius:8px;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:scale(1.05);
+
 }
 
 .fitur{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:40px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+
+padding:60px;
+
 }
 
 .card{
+
 background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+transition:.3s;
+
 text-align:center;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
 }
 
 .card h3{
-margin-bottom:10px;
+
+margin-bottom:15px;
+color:#1565c0;
+
+}
+
+.card p{
+
+line-height:25px;
+
 }
 
 footer{
+
+margin-top:60px;
+
 background:#222;
+
 color:white;
+
+padding:30px;
+
 text-align:center;
-padding:25px;
-margin-top:50px;
+
 }
 
 @media(max-width:768px){
 
 nav{
+
 flex-direction:column;
+
 }
 
 .menu{
-flex-direction:column;
+
 margin-top:15px;
+flex-direction:column;
 text-align:center;
+
 }
 
 .hero h1{
-font-size:30px;
+
+font-size:34px;
+
 }
 
 .hero p{
+
 font-size:18px;
+
+}
+
+.fitur{
+
+padding:20px;
+
 }
 
 }
@@ -131,21 +216,25 @@ font-size:18px;
 
 <nav>
 
-<div class="logo">Viral</div>
+<div class="logo">
+
+Viral
+
+</div>
 
 <ul class="menu">
 
-<li><a href="#">Home</a></li>
+<li><a href="index.html">Home</a></li>
 
-<li><a href="#">Campaign</a></li>
+<li><a href="campaign.html">Campaign</a></li>
 
-<li><a href="#">Creator</a></li>
+<li><a href="creator.html">Creator</a></li>
 
-<li><a href="#">Brand</a></li>
+<li><a href="brand.html">Brand</a></li>
 
-<li><a href="#">Login</a></li>
+<li><a href="login.html">Login</a></li>
 
-<li><a href="#">Daftar</a></li>
+<li><a href="register.html">Daftar</a></li>
 
 </ul>
 
@@ -153,38 +242,98 @@ font-size:18px;
 
 <section class="hero">
 
-<h1>Platform Campaign Creator Indonesia</h1>
+<h1>
 
-<p>Menghubungkan Brand dengan Content Creator secara mudah.</p>
+Platform Campaign Creator Indonesia
 
-<a href="#" class="btn">Mulai Sekarang</a>
+</h1>
+
+<p>
+
+Menghubungkan Brand dengan Creator untuk menghasilkan konten berkualitas.
+
+</p>
+
+<a href="register.html" class="btn">
+
+Mulai Sekarang
+
+</a>
 
 </section>
 
 <section class="fitur">
 
 <div class="card">
-<h3>Campaign</h3>
-<p>Temukan campaign terbaru setiap hari.</p>
+
+<h3>📢 Campaign</h3>
+
+<p>
+
+Cari campaign terbaru dan mulai menghasilkan uang dari konten.
+
+</p>
+
+<br>
+
+<a class="btn" href="campaign.html">
+
+Lihat Campaign
+
+</a>
+
 </div>
 
 <div class="card">
-<h3>Creator</h3>
-<p>Upload konten dan dapatkan penghasilan.</p>
+
+<h3>🎥 Creator</h3>
+
+<p>
+
+Gabung campaign, upload video dan dapatkan reward.
+
+</p>
+
+<br>
+
+<a class="btn" href="creator.html">
+
+Masuk Creator
+
+</a>
+
 </div>
 
 <div class="card">
-<h3>Brand</h3>
-<p>Promosikan produk melalui ribuan creator.</p>
+
+<h3>🏢 Brand</h3>
+
+<p>
+
+Promosikan produk Anda melalui ribuan content creator Indonesia.
+
+</p>
+
+<br>
+
+<a class="btn" href="brand.html">
+
+Masuk Brand
+
+</a>
+
 </div>
 
 </section>
 
 <footer>
 
-©2026 Viral Platform
+© 2026 Viral Platform Creator Indonesia
 
 </footer>
+
 <script src="script.js"></script>
+
 </body>
-                             </html>
+
+</html>
