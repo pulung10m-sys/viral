@@ -20,119 +20,124 @@ import {
 
 window.registerUser = async function () {
 
-  const nama = document.getElementById("nama").value;
-  const email = document.getElementById("email").value;
+  const nama = document.getElementById("nama").value.trim();
+  const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
   const role = document.getElementById("role").value;
 
-  try {
+  if(!nama || !email || !password){
+      alert("Semua data wajib diisi");
+      return;
+  }
 
-    const userCredential =
+  try{
+
+      const userCredential =
       await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
+          auth,
+          email,
+          password
       );
 
-    await setDoc(
-      doc(db, "users", userCredential.user.uid),
-      {
-        nama: nama,
-        email: email,
-        role: role,
-        createdAt: new Date()
-      }
-    );
+      await setDoc(
+          doc(db,"users",userCredential.user.uid),
+          {
+              nama:nama,
+              email:email,
+              role:role,
+              saldo:0,
+              createdAt:new Date()
+          }
+      );
 
-    alert("Registrasi berhasil");
+      alert("Registrasi berhasil");
 
-    location.href = "login.html";
+      location.href="login.html";
 
-  } catch (error) {
+  }catch(error){
 
-    alert(error.message);
+      alert(error.message);
 
   }
 
-};
+}
+
 
 
 // ==========================
 // LOGIN
 // ==========================
 
-window.loginUser = async function () {
+window.loginUser = async function(){
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+    const email=document.getElementById("email").value.trim();
+    const password=document.getElementById("password").value;
 
-  try {
+    try{
 
-    await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+        await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
 
-    alert("Login berhasil");
+        location.href="dashboard.html";
 
-    location.href = "dashboard.html";
+    }catch(error){
 
-  } catch (error) {
+        alert(error.message);
 
-    alert(error.message);
+    }
 
-  }
+}
 
-};
 
 
 // ==========================
 // CEK LOGIN
 // ==========================
 
-window.cekLogin = function () {
+window.cekLogin=function(){
 
-  onAuthStateChanged(auth, async (user) => {
+    onAuthStateChanged(auth,async(user)=>{
 
-    if (!user) {
+        if(!user){
 
-      location.href = "login.html";
-      return;
+            location.href="login.html";
+            return;
 
-    }
+        }
 
-    const docRef = doc(db, "users", user.uid);
+        const snap=await getDoc(doc(db,"users",user.uid));
 
-    const snap = await getDoc(docRef);
+        if(snap.exists()){
 
-    if (snap.exists()) {
+            const data=snap.data();
 
-      const data = snap.data();
+            const nama=document.getElementById("namaUser");
 
-      const nama = document.getElementById("namaUser");
+            if(nama){
 
-      if (nama) {
+                nama.innerHTML=data.nama;
 
-        nama.innerHTML = data.nama;
+            }
 
-      }
+        }
 
-    }
+    });
 
-  });
+}
 
-};
 
 
 // ==========================
 // LOGOUT
 // ==========================
 
-window.logoutUser = async function () {
+window.logoutUser=async function(){
 
-  await signOut(auth);
+    await signOut(auth);
 
-  location.href = "login.html";
+    location.href="login.html";
 
-};
+}
