@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -41,62 +40,34 @@ padding:15px 20px;
 .logo{
 font-size:30px;
 font-weight:bold;
-color:white;
+color:#fff;
 }
 
 .menu{
 display:flex;
 list-style:none;
-gap:25px;
-align-items:center;
-}
-
-.menu li{
-position:relative;
+gap:30px;
 }
 
 .menu a{
-color:white;
 text-decoration:none;
+color:#fff;
 font-weight:bold;
 }
 
-.dropdown{
-display:none;
-position:absolute;
-top:40px;
-left:0;
-background:white;
-min-width:200px;
-border-radius:8px;
-box-shadow:0 5px 20px rgba(0,0,0,.15);
-overflow:hidden;
-}
-
-.dropdown a{
-display:block;
-padding:12px;
-color:#333;
-}
-
-.dropdown a:hover{
-background:#1565c0;
-color:white;
-}
-
-.menu li:hover .dropdown{
-display:block;
+.menu a:hover{
+color:#FFD54F;
 }
 
 .hero{
 background:linear-gradient(135deg,#1565c0,#42a5f5);
-padding:90px 20px;
+color:#fff;
 text-align:center;
-color:white;
+padding:90px 20px;
 }
 
 .hero h1{
-font-size:46px;
+font-size:45px;
 margin-bottom:20px;
 }
 
@@ -107,61 +78,53 @@ margin:auto;
 line-height:30px;
 }
 
-.section{
+.menu-card{
 max-width:1200px;
 margin:60px auto;
-padding:0 20px;
-}
-
-.section h2{
-text-align:center;
-margin-bottom:40px;
-color:#1565c0;
-}
-
-.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+padding:20px;
 }
 
 .card{
-background:white;
+background:#fff;
 border-radius:15px;
-padding:25px;
+padding:30px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
+text-align:center;
 }
 
-.card h3{
+.card h2{
 margin-bottom:15px;
 color:#1565c0;
 }
 
-.reward{
-font-size:22px;
-font-weight:bold;
-margin:15px 0;
-color:#2e7d32;
+.card p{
+margin-bottom:25px;
+line-height:26px;
 }
 
 .btn{
-display:inline-block;
-padding:12px 22px;
+display:block;
+padding:14px;
+margin:10px 0;
 background:#1565c0;
 color:white;
 text-decoration:none;
 border-radius:8px;
+font-weight:bold;
 }
 
 .btn:hover{
-background:#0d47a1;
+background:#0D47A1;
 }
 
 footer{
 margin-top:60px;
 background:#222;
-color:white;
-padding:30px;
+color:#fff;
+padding:25px;
 text-align:center;
 }
 
@@ -172,8 +135,9 @@ flex-direction:column;
 }
 
 .menu{
-flex-direction:column;
 margin-top:15px;
+flex-direction:column;
+text-align:center;
 }
 
 .hero h1{
@@ -182,18 +146,6 @@ font-size:32px;
 
 .hero p{
 font-size:17px;
-}
-
-.dropdown{
-position:static;
-display:block;
-box-shadow:none;
-background:transparent;
-}
-
-.dropdown a{
-color:white;
-padding:8px;
 }
 
 }
@@ -209,9 +161,7 @@ padding:8px;
 <nav>
 
 <div class="logo">
-
 Viral
-
 </div>
 
 <ul class="menu">
@@ -221,57 +171,7 @@ Viral
 </li>
 
 <li>
-
-<a href="campaign.html">
-
-Campaign Publish
-
-</a>
-
-</li>
-
-<li>
-
-<a href="#">Creator ▾</a>
-
-<div class="dropdown">
-
-<a href="register.html?role=creator">
-
-Daftar Creator
-
-</a>
-
-<a href="login.html?role=creator">
-
-Login Creator
-
-</a>
-
-</div>
-
-</li>
-
-<li>
-
-<a href="#">Brand ▾</a>
-
-<div class="dropdown">
-
-<a href="register.html?role=brand">
-
-Daftar Brand
-
-</a>
-
-<a href="login.html?role=brand">
-
-Login Brand
-
-</a>
-
-</div>
-
+<a href="campaign.html">Campaign Publish</a>
 </li>
 
 </ul>
@@ -283,94 +183,64 @@ Login Brand
 <section class="hero">
 
 <h1>
-
 Platform Campaign Creator Indonesia
-
 </h1>
 
 <p>
-
-Menghubungkan Brand dengan Content Creator untuk menjalankan campaign digital secara profesional, transparan, dan mudah.
-
+Menghubungkan Brand dan Creator dalam satu platform campaign digital yang aman, cepat, dan transparan.
 </p>
 
 </section>
 
-<section class="section">
-
-<h2>
-
-Campaign Terbaru
-
-</h2>
-
-<div class="grid">
+<section class="menu-card">
 
 <div class="card">
 
-<h3>Review Produk Skincare</h3>
+<h2>👨‍💻 Creator</h2>
 
-<p>Platform : TikTok</p>
+<p>
+Daftar sebagai Content Creator, ikuti campaign, kirim video, dan dapatkan reward.
+</p>
 
-<p>Deadline : 31 Agustus 2026</p>
+<a class="btn" href="login.html?role=creator">
+Login Creator
+</a>
 
-<div class="reward">
-
-Reward Rp150.000
-
-</div>
-
-<a class="btn" href="campaign-detail.html">
-
-Lihat Brief
-
+<a class="btn" href="register.html?role=creator">
+Daftar Creator
 </a>
 
 </div>
 
 <div class="card">
 
-<h3>Promosi Aplikasi Mobile</h3>
+<h2>🏢 Brand</h2>
 
-<p>Platform : Instagram Reels</p>
+<p>
+Daftarkan perusahaan Anda dan publikasikan campaign untuk ribuan Creator.
+</p>
 
-<p>Deadline : 15 September 2026</p>
+<a class="btn" href="login.html?role=brand">
+Login Brand
+</a>
 
-<div class="reward">
-
-Reward Rp250.000
-
-</div>
-
-<a class="btn" href="campaign-detail.html">
-
-Lihat Brief
-
+<a class="btn" href="register.html?role=brand">
+Daftar Brand
 </a>
 
 </div>
 
 <div class="card">
 
-<h3>Review Makanan</h3>
+<h2>📢 Campaign Publish</h2>
 
-<p>Platform : TikTok</p>
+<p>
+Lihat campaign terbaru yang dipublikasikan Brand beserta brief, reward, dan deadline.
+</p>
 
-<p>Deadline : 10 September 2026</p>
-
-<div class="reward">
-
-Reward Rp300.000
-
-</div>
-
-<a class="btn" href="campaign-detail.html">
-
-Lihat Brief
-
+<a class="btn" href="campaign.html">
+Lihat Campaign
 </a>
-
-</div>
 
 </div>
 
