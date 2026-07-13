@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabung Campaign</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f4f6fb;
+}
+
+header{
+background:#1976d2;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+max-width:600px;
+margin:30px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+input,textarea,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#1976d2;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+cursor:pointer;
+}
+
+.success{
+display:none;
+margin-top:20px;
+padding:15px;
+background:#d4edda;
+color:#155724;
+border-radius:8px;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Gabung Campaign</h1>
+
+</header>
+
+<div class="container">
+
+<h2>Isi Data Creator</h2>
+
+<input id="nama" placeholder="Nama Lengkap">
+
+<input id="email" type="email" placeholder="Email">
+
+<input id="wa" placeholder="Nomor WhatsApp">
+
+<input id="tiktok" placeholder="Link TikTok">
+
+<input id="followers" type="number" placeholder="Jumlah Followers">
+
+<select id="kategori">
+
+<option>Beauty</option>
+
+<option>Gaming</option>
+
+<option>Food</option>
+
+<option>Fashion</option>
+
+<option>Technology</option>
+
+</select>
+
+<textarea id="catatan" placeholder="Catatan untuk Brand"></textarea>
+
+<button onclick="daftar()">
+
+Daftar Campaign
+
+</button>
+
+<div class="success" id="hasil">
+
+✅ Pendaftaran berhasil dikirim.
+
+</div>
+
+</div>
+
+<script>
+
+function daftar(){
+
+document.getElementById("hasil").style.display="block";
+
+}
+
+</script>
+
+</body>
+
+</html>
