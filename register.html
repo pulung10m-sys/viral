@@ -1,102 +1,19 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daftar - Viral</title>
+<input id="nama" type="text" placeholder="Nama Lengkap">
 
-<style>
+<input id="email" type="email" placeholder="Email">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
+<input id="password" type="password" placeholder="Password">
 
-body{
-background:#1976d2;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
-}
+<select id="role">
 
-.box{
-background:white;
-width:380px;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 20px rgba(0,0,0,.2);
-}
+<option value="creator">Creator</option>
 
-h2{
-text-align:center;
-margin-bottom:20px;
-}
-
-input,select{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:8px;
-font-size:16px;
-}
-
-button{
-width:100%;
-padding:12px;
-margin-top:10px;
-background:#1976d2;
-color:white;
-border:none;
-border-radius:8px;
-font-size:17px;
-cursor:pointer;
-}
-
-a{
-display:block;
-text-align:center;
-margin-top:15px;
-text-decoration:none;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="box">
-
-<h2>Daftar Akun</h2>
-
-<input type="text" placeholder="Nama Lengkap">
-
-<input type="email" placeholder="Email">
-
-<input type="password" placeholder="Password">
-
-<select>
-
-<option>Creator</option>
-
-<option>Brand</option>
+<option value="brand">Brand</option>
 
 </select>
 
-<button>Daftar Sekarang</button>
+<button onclick="registerUser()">
 
-<a href="login.html">Sudah punya akun?</a>
+Daftar Sekarang
 
-<a href="index.html">Kembali ke Home</a>
-
-</div>
-<script type="module" src="auth.js"></script>
-</body>
-</html>
-</body>
-  </html>
+</button>
