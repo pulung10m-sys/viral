@@ -7,123 +7,109 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Dashboard Brand</title>
+<title>Buat Campaign</title>
 
 <style>
 
 body{
-
-font-family:Arial;
-
+font-family:Arial,sans-serif;
 background:#f2f5f9;
-
-margin:0;
-
 }
 
 .container{
-
-max-width:700px;
-
+max-width:600px;
 margin:40px auto;
-
 background:white;
-
 padding:30px;
-
-border-radius:10px;
-
+border-radius:12px;
 box-shadow:0 5px 20px rgba(0,0,0,.1);
-
 }
 
 input,textarea,select{
-
 width:100%;
-
 padding:12px;
-
 margin:10px 0;
-
 border:1px solid #ccc;
-
 border-radius:8px;
-
 }
 
 button{
-
 width:100%;
-
 padding:14px;
-
 background:#1976d2;
-
 color:white;
-
 border:none;
-
 border-radius:8px;
-
-font-size:16px;
-
+font-size:17px;
 cursor:pointer;
+}
 
+button:hover{
+background:#0d47a1;
 }
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-<h2>Buat Campaign</h2>
+<h2>Buat Campaign Baru</h2>
 
-<input
 
+<input 
 id="judul"
-
 placeholder="Judul Campaign">
 
-<input
 
+<input 
 id="reward"
-
 placeholder="Reward">
+
 
 <select id="kategori">
 
-<option>Beauty</option>
+<option value="Beauty">
+Beauty
+</option>
 
-<option>Food</option>
+<option value="Food">
+Food
+</option>
 
-<option>Gaming</option>
+<option value="Gaming">
+Gaming
+</option>
 
-<option>Technology</option>
+<option value="Technology">
+Technology
+</option>
 
 </select>
 
+
 <textarea
-
 id="deskripsi"
-
 placeholder="Deskripsi Campaign">
-
 </textarea>
 
-<button
 
-onclick="simpanCampaign()">
+<button onclick="simpanCampaign()">
 
 Simpan Campaign
 
 </button>
 
+
 </div>
 
+
 <script type="module" src="campaign.js"></script>
+
 
 </body>
 
