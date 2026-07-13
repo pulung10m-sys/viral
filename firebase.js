@@ -1,9 +1,7 @@
-// Import Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-// Konfigurasi Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyANLECIVy1U87UgJsQeyuCTBNjnRilMkaQ",
   authDomain: "viral-platform-66308.firebaseapp.com",
@@ -14,7 +12,6 @@ const firebaseConfig = {
   measurementId: "G-XL8SLFPN3H"
 };
 
-// Inisialisasi
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
