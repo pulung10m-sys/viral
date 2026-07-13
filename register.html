@@ -1,180 +1,75 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daftar - Viral Platform</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI,Arial,sans-serif;
-}
-
-body{
-background:#f4f7fb;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
-
-.container{
-width:100%;
-max-width:430px;
-background:#fff;
-padding:35px;
-border-radius:18px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-
-.logo{
-text-align:center;
-font-size:34px;
-font-weight:bold;
-color:#1565c0;
-margin-bottom:10px;
-}
-
-h2{
-text-align:center;
-margin-bottom:8px;
-}
-
-.sub{
-text-align:center;
-color:#666;
-margin-bottom:30px;
-}
-
-.input{
-width:100%;
-padding:14px;
-border:1px solid #ddd;
-border-radius:10px;
-margin-bottom:18px;
-font-size:15px;
-outline:none;
-transition:.3s;
-}
-
-.input:focus{
-border-color:#1565c0;
-box-shadow:0 0 5px rgba(21,101,192,.3);
-}
-
-select{
-width:100%;
-padding:14px;
-border:1px solid #ddd;
-border-radius:10px;
-margin-bottom:20px;
-font-size:15px;
-}
-
-button{
-width:100%;
-padding:15px;
-background:#1565c0;
-color:white;
-border:none;
-border-radius:10px;
-font-size:17px;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-background:#0d47a1;
-}
-
-.login{
-margin-top:20px;
-text-align:center;
-}
-
-.login a{
-text-decoration:none;
-color:#1565c0;
-font-weight:bold;
-}
-
-.error{
-margin-top:15px;
-color:red;
-text-align:center;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun Baru - Firebase</title>
 </head>
-
 <body>
+    <header>
+        <nav>
+            <a href="index.html">Beranda</a> | <a href="join.html">Gabung</a> | <a href="register.html"><b>Daftar</b></a> | <a href="login.html">Login</a>
+        </nav>
+    </header>
 
-<div class="container">
+    <main>
+        <h1>Formulir Registrasi Firebase</h1>
+        <form id="registerForm">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" required><br><br>
 
-<div class="logo">
-Viral
-</div>
+            <label for="password">Kata Sandi:</label><br>
+            <input type="password" id="password" required><br><br>
 
-<h2>Buat Akun Baru</h2>
+            <button type="submit" id="btnDaftar">Daftar Akun</button>
+        </form>
+    </main>
 
-<p class="sub">
-Gabung sebagai Creator atau Brand
-</p>
+    <!-- Memanggil SDK Firebase Auth secara Online -->
+    <script type="module">
+        import { initializeApp } from "https://gstatic.com";
+        import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://gstatic.com";
 
-<input
-type="text"
-id="nama"
-class="input"
-placeholder="Nama Lengkap">
+        // ⚠️ GANTI DENGAN KODE KONFIGURASI YANG ANDA SALIN DARI CONSOLE FIREBASE
+        const firebaseConfig = {
+            apiKey: "AIzaSy...",
+            authDomain: "://firebaseapp.com",
+            projectId: "proyek-anda",
+            storageBucket: "://appspot.com",
+            messagingSenderId: "123456789",
+            appId: "1:123456:web:abcde"
+        };
 
-<input
-type="email"
-id="email"
-class="input"
-placeholder="Email">
+        // Inisialisasi Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
-<input
-type="password"
-id="password"
-class="input"
-placeholder="Password">
+        // Logika Pendaftaran
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const btn = document.getElementById('btnDaftar');
 
-<select id="role">
+            btn.innerText = "Mendaftarkan...";
+            btn.disabled = true;
 
-<option value="creator">
-Creator
-</option>
-
-<option value="brand">
-Brand
-</option>
-
-</select>
-
-<button onclick="register()">
-Daftar Sekarang
-</button>
-
-<div class="login">
-Sudah punya akun?
-<a href="login.html">
-Login
-</a>
-</div>
-
-<p id="pesan" class="error"></p>
-
-</div>
-
-<script type="module" src="auth.js"></script>
-<button onclick="registerUser()">
-Daftar Sekarang
-</button>
-  
+            // 1. Membuat akun baru di Firebase secara otomatis
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // 2. Jika akun berhasil dibuat, otomatis kirim email verifikasi resmi dari Google
+                    sendEmailVerification(auth.currentUser)
+                        .then(() => {
+                            alert("Pendaftaran sukses! Google Firebase telah mengirimkan link verifikasi ke email: " + email + ". Silakan klik link di email Anda sebelum melakukan login.");
+                            window.location.href = "login.html";
+                        });
+                })
+                .catch((error) => {
+                    alert("Gagal mendaftar: " + error.message);
+                    btn.innerText = "Daftar Akun";
+                    btn.disabled = false;
+                });
+        });
+    </script>
 </body>
 </html>
