@@ -1,49 +1,44 @@
 import { db } from "./firebase.js";
-
 import {
-collection,
-addDoc,
-serverTimestamp
+  collection,
+  addDoc,
+  serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
+window.simpanCampaign = async function () {
 
-window.simpanCampaign = async function(){
+  const judul = document.getElementById("judul").value;
+  const reward = Number(document.getElementById("reward").value);
+  const kategori = document.getElementById("kategori").value;
+  const deskripsi = document.getElementById("deskripsi").value;
 
-let judul =
-document.getElementById("judul").value;
+  try {
 
-let reward =
-document.getElementById("reward").value;
+    await addDoc(collection(db, "campaigns"), {
 
-let kategori =
-document.getElementById("kategori").value;
+      judul: judul,
+      reward: reward,
+      kategori: kategori,
+      deskripsi: deskripsi,
 
-let deskripsi =
-document.getElementById("deskripsi").value;
+      status: "Aktif",
 
+      kuota: 100,
 
-try{
+      deadline: "",
 
-await addDoc(
-collection(db,"campaigns"),
-{
-judul:judul,
-reward:reward,
-kategori:kategori,
-deskripsi:deskripsi,
-status:"Aktif",
-createdAt:serverTimestamp()
-}
-);
+      brandId: "",
 
+      createdAt: serverTimestamp()
 
-alert("Campaign berhasil disimpan");
+    });
 
+    alert("Campaign berhasil disimpan");
 
-}catch(error){
+  } catch (error) {
 
-alert(error.message);
+    alert(error.message);
 
-}
+  }
 
 }
