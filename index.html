@@ -1,465 +1,268 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Viral | Platform Campaign Creator Indonesia</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-background:#f5f7fb;
-color:#333;
-}
-
-header{
-background:#1565c0;
-position:sticky;
-top:0;
-z-index:999;
-box-shadow:0 2px 8px rgba(0,0,0,.15);
-}
-
-nav{
-
-max-width:1200px;
-
-margin:auto;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:18px 25px;
-
-}
-
-.logo{
-
-font-size:30px;
-
-font-weight:bold;
-
-color:white;
-
-}
-
-.menu{
-
-display:flex;
-
-list-style:none;
-
-gap:25px;
-
-}
-
-.menu li{
-
-position:relative;
-
-}
-
-.menu li a{
-
-color:white;
-
-text-decoration:none;
-
-font-weight:bold;
-
-}
-
-.menu li a:hover{
-
-color:#FFD54F;
-
-}
-
-.dropdown{
-
-display:none;
-
-position:absolute;
-
-top:38px;
-
-left:0;
-
-background:white;
-
-min-width:220px;
-
-border-radius:10px;
-
-overflow:hidden;
-
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-
-}
-
-.dropdown a{
-
-display:block;
-
-padding:12px 15px;
-
-color:#333 !important;
-
-}
-
-.dropdown a:hover{
-
-background:#1565c0;
-
-color:white !important;
-
-}
-
-.menu li:hover .dropdown{
-
-display:block;
-
-}
-
-.hero{
-
-background:linear-gradient(135deg,#1565c0,#42a5f5);
-
-padding:90px 20px;
-
-text-align:center;
-
-color:white;
-
-}
-
-.hero h1{
-
-font-size:46px;
-
-margin-bottom:20px;
-
-}
-
-.hero p{
-
-font-size:20px;
-
-line-height:32px;
-
-max-width:760px;
-
-margin:auto;
-
-}
-
-.container{
-
-max-width:1200px;
-
-margin:60px auto;
-
-padding:0 20px;
-
-}
-
-.section-title{
-
-text-align:center;
-
-font-size:34px;
-
-margin-bottom:40px;
-
-color:#1565c0;
-
-}
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-gap:25px;
-
-}
-
-.card{
-
-background:white;
-
-padding:30px;
-
-border-radius:15px;
-
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-transition:.3s;
-
-}
-
-.card:hover{
-
-transform:translateY(-5px);
-
-}
-
-.card h3{
-
-color:#1565c0;
-
-margin-bottom:15px;
-
-}
-
-.card p{
-
-line-height:28px;
-
-margin-bottom:15px;
-
-}
-
-.btn{
-
-display:inline-block;
-
-padding:12px 22px;
-
-background:#1565c0;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:8px;
-
-margin-top:10px;
-
-font-weight:bold;
-
-}
-
-.btn:hover{
-
-background:#0d47a1;
-
-}
-
-.btn-outline{
-
-background:white;
-
-color:#1565c0;
-
-border:2px solid #1565c0;
-
-margin-left:10px;
-
-}
-
-.btn-outline:hover{
-
-background:#1565c0;
-
-color:white;
-
-}
-
-footer{
-
-background:#222;
-
-color:white;
-
-text-align:center;
-
-padding:30px;
-
-margin-top:60px;
-
-}
-
-@media(max-width:768px){
-
-nav{
-
-flex-direction:column;
-
-}
-
-.menu{
-
-flex-direction:column;
-
-margin-top:15px;
-
-text-align:center;
-
-}
-
-.dropdown{
-
-position:static;
-
-display:block;
-
-background:transparent;
-
-box-shadow:none;
-
-}
-
-.dropdown a{
-
-color:white !important;
-
-padding:8px;
-
-}
-
-.hero h1{
-
-font-size:32px;
-
-}
-
-.hero p{
-
-font-size:17px;
-
-}
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SatuHub - Menghubungkan Brand & Kreator Hebat</title>
+    <style>
+        :root {
+            --primary: #6366f1; /* Indigo modern */
+            --primary-hover: #4f46e5;
+            --accent: #10b981; /* Hijau sukses */
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigasi */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-nav {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 8px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 140px 8% 100px;
+            text-align: center;
+            background: radial-gradient(circle at top, #e0e7ff 0%, var(--light) 60%);
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            max-width: 900px;
+            margin: 0 auto 25px;
+            line-height: 1.15;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: var(--gray);
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-brand {
+            background-color: var(--dark);
+            color: white;
+        }
+
+        .btn-creator {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-creator:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+        .btn-brand:hover { background-color: #1e293b; transform: translateY(-2px); }
+
+        /* Solusi Dua Sisi */
+        .solutions {
+            padding: 100px 8%;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 60px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+        }
+
+        .side-card {
+            padding: 45px;
+            border-radius: 16px;
+            background: var(--light);
+            border: 1px solid #e2e8f0;
+        }
+
+        .side-card.creator-side {
+            border-top: 5px solid var(--primary);
+        }
+
+        .side-card.brand-side {
+            border-top: 5px solid var(--dark);
+        }
+
+        .side-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .side-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .side-card ul li {
+            margin-bottom: 15px;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .side-card ul li::before {
+            content: "✦";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer p { color: #94a3b8; }
+
+        /* Responsif Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 34px; }
+            .hero p { font-size: 16px; }
+            .cta-group { flex-direction: column; gap: 15px; }
+            .grid { grid-template-columns: 1fr; }
+            .side-card { padding: 30px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <header>
+        <a href="#" class="logo">Satu<span>Hub</span></a>
+        <nav class="nav-links">
+            <a href="#fitur">Cara Kerja</a>
+            <a href="https://wa.me" class="btn-nav" target="_blank">Hubungi Kami</a>
+        </nav>
+    </header>
 
-<nav>
+    <section class="hero">
+        <h1>Jembatan Terbaik Antara <span>Brand Populer</span> & <span>Kreator Berbakat</span></h1>
+        <p>Platform terintegrasi untuk membantu brand meluncurkan campaign viral dan membantu kreator konten mendapatkan monetisasi terbaik.</p>
+        <div class="cta-group">
+            <a href="https://wa.me?text=Halo,%20saya%20dari%20Brand%20ingin%20bekerjasama" class="btn btn-brand" target="_blank">Saya Sebuah Brand</a>
+            <a href="https://wa.me?text=Halo,%20saya%20Kreator%20ingin%20bergabung" class="btn btn-creator" target="_blank">Saya Seorang Kreator</a>
+        </div>
+    </section>
 
-<div class="logo">
+    <section class="solutions" id="fitur">
+        <h2 class="section-title">Satu Platform, Dua Solusi Hebat</h2>
+        <div class="grid">
+            <!-- Sisi Brand -->
+            <div class="side-card brand-side">
+                <h3>Untuk Brand / Pemilik Bisnis</h3>
+                <ul>
+                    <li>Temukan kreator yang sesuai target audiens produk Anda.</li>
+                    <li>Sistem manajemen *briefing* dan konten terpusat.</li>
+                    <li>Analisis data jangkauan (*reach*) dan keterlibatan (*engagement*).</li>
+                    <li>Sistem pembayaran aman berbasis performa.</li>
+                </ul>
+                <a href="https://wa.me?text=Halo,%20saya%20ingin%20konsultasi%20campaign%20brand" class="btn btn-brand" style="display:block; text-align:center;" target="_blank">Cari Kreator Anda</a>
+            </div>
 
-Viral
+            <!-- Sisi Creator -->
+            <div class="side-card creator-side">
+                <h3>Untuk Content Creator</h3>
+                <ul>
+                    <li>Akses ke ratusan *campaign* aktif dari brand lokal & global.</li>
+                    <li>Kebebasan menentukan tarif *endorse* sesuai statistik Anda.</li>
+                    <li>Kontrak kerja transparan tanpa potongan biaya tersembunyi.</li>
+                    <li>Komunitas eksklusif dan tips meningkatkan kualitas konten.</li>
+                </ul>
+                <a href="https://wa.me?text=Halo,%20saya%20ingin%20daftar%20sebagai%20kreator" class="btn btn-creator" style="display:block; text-align:center;" target="_blank">Mulai Dapatkan Projek</a>
+            </div>
+        </div>
+    </section>
 
-</div>
+    <footer>
+        <p>&copy; 2026 SatuHub Marketplace Agency. Hak Cipta Dilindungi.</p>
+    </footer>
 
-<ul class="menu">
-
-<li>
-
-<a href="index.html">
-
-Home
-
-</a>
-
-</li>
-
-<li>
-
-<a href="campaign.html">
-
-Campaign Publish
-
-</a>
-
-</li>
-
-<li>
-
-<a href="#">
-
-Creator ▾
-
-</a>
-
-<div class="dropdown">
-
-<a href="login.html?role=creator">
-
-Login Creator
-
-</a>
-
-<a href="register.html?role=creator">
-
-Daftar Creator
-
-</a>
-
-</div>
-
-</li>
-
-<li>
-
-<a href="#">
-
-Brand ▾
-
-</a>
-
-<div class="dropdown">
-
-<a href="login.html?role=brand">
-
-Login Brand
-
-</a>
-
-<a href="register.html?role=brand">
-
-Daftar Brand
-
-</a>
-
-</div>
-
-</li>
-
-</ul>
-
-</nav>
-
-</header>
-
-<section class="hero">
-
-<h1>
-
-Platform Campaign Creator Indonesia
-
-</h1>
-
-<p>
-
-Brand mempublikasikan brief campaign melalui dashboard Brand.
-
-Creator dapat melihat seluruh campaign yang dipublikasikan, membaca brief, kemudian bergabung setelah login.
-
-</p>
-
-</section>
-<section class="container">
 </body>
-</html>
+  </html>
+  
