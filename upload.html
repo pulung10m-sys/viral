@@ -3,56 +3,156 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Upload Konten</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef3f8;
+}
+
+.container{
+max-width:700px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+h1{
+color:#1565c0;
+margin-bottom:25px;
+text-align:center;
+}
+
+label{
+display:block;
+margin-top:15px;
+margin-bottom:8px;
+font-weight:bold;
+}
+
+input,
+select,
+textarea{
+
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+button{
+
+margin-top:25px;
+width:100%;
+padding:15px;
+background:#1565c0;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+
+}
+
+button:hover{
+background:#0d47a1;
+}
+
+.back{
+
+display:inline-block;
+margin-bottom:20px;
+text-decoration:none;
+color:#1565c0;
+font-weight:bold;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<h2>Upload Konten</h2>
+<div class="container">
+
+<a href="dashboard.html" class="back">← Kembali ke Dashboard</a>
+
+<h1>Upload Konten</h1>
 
 <form id="uploadForm">
 
 <label>Pilih Campaign</label>
 
 <select id="campaign">
-<option value="">Pilih Campaign</option>
-</select>
 
-<br><br>
+<option>Review Skincare</option>
+
+<option>Promosi Aplikasi</option>
+
+<option>Review Makanan</option>
+
+</select>
 
 <label>Link Video TikTok</label>
 
-<input type="url" id="video">
-
-<br><br>
+<input
+type="url"
+id="videoLink"
+placeholder="https://www.tiktok.com/...">
 
 <label>Caption</label>
 
-<textarea id="caption"></textarea>
+<textarea
+id="caption"
+placeholder="Masukkan caption video">
+</textarea>
 
-<br><br>
+<label>Upload Screenshot</label>
 
-<label>Screenshot</label>
-
-<input type="file" id="image">
-
-<br><br>
+<input type="file" id="screenshot">
 
 <button type="submit">
 
-Upload
+Kirim Konten
 
 </button>
 
 </form>
 
-<script src="firebase.js"></script>
+</div>
 
-<script src="script.js"></script>
+<script>
+
+document
+.getElementById("uploadForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert("Upload berhasil! (sementara belum tersimpan ke Firebase)");
+
+});
+
+</script>
 
 </body>
 
