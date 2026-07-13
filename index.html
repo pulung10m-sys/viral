@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SatuHub - Menghubungkan Brand & Kreator Hebat</title>
+    <title>Viralin - Jembatan Brand & Content Creator Terbesar</title>
     <style>
         :root {
-            --primary: #6366f1; /* Indigo modern */
-            --primary-hover: #4f46e5;
-            --accent: #10b981; /* Hijau sukses */
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
+            --primary: #7c3aed; /* Ungu elektrik */
+            --accent: #ff007f; /* Pink neon */
+            --dark: #090d16;
+            --card-bg: #131a2c;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --success: #10b981;
         }
 
         * {
@@ -23,80 +24,81 @@
         }
 
         body {
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: var(--dark);
+            color: var(--text-light);
             line-height: 1.6;
         }
 
         /* Navigasi */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(9, 13, 22, 0.9);
             padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+            border-bottom: 1px solid #1e293b;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px);
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--primary);
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--text-light);
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
-        .logo span {
-            color: var(--dark);
-        }
+        .logo span { color: var(--accent); }
 
         .nav-links a {
             margin-left: 25px;
             text-decoration: none;
-            color: var(--dark);
+            color: var(--text-gray);
             font-weight: 600;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--accent); }
 
         .btn-nav {
-            background: var(--primary);
+            background: linear-gradient(45px, var(--primary), var(--accent));
             color: white !important;
-            padding: 10px 22px;
-            border-radius: 8px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: none;
+            font-weight: 700;
         }
 
         /* Hero Section */
         .hero {
             margin-top: 80px;
-            padding: 140px 8% 100px;
+            padding: 140px 8% 80px;
             text-align: center;
-            background: radial-gradient(circle at top, #e0e7ff 0%, var(--light) 60%);
+            background: radial-gradient(circle at top, rgba(124, 58, 237, 0.15) 0%, rgba(9, 13, 22, 0) 60%);
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: 56px;
             font-weight: 900;
-            letter-spacing: -1px;
             max-width: 900px;
             margin: 0 auto 25px;
             line-height: 1.15;
         }
 
         .hero h1 span {
-            color: var(--primary);
+            background: linear-gradient(45px, #38bdf8, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 19px;
-            color: var(--gray);
+            font-size: 20px;
+            color: var(--text-gray);
             max-width: 650px;
             margin: 0 auto 40px;
         }
@@ -109,160 +111,227 @@
 
         .btn {
             display: inline-block;
-            padding: 15px 35px;
+            padding: 16px 38px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 50px;
             font-weight: 700;
             transition: all 0.3s;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-brand {
-            background-color: var(--dark);
+            background-color: transparent;
             color: white;
+            border: 2px solid #334155;
         }
 
         .btn-creator {
-            background-color: var(--primary);
+            background: linear-gradient(45px, var(--primary), var(--accent));
             color: white;
-            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
         }
 
-        .btn-creator:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
-        .btn-brand:hover { background-color: #1e293b; transform: translateY(-2px); }
+        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
 
-        /* Solusi Dua Sisi */
-        .solutions {
-            padding: 100px 8%;
-            background: white;
+        /* Section Campaign */
+        .campaigns {
+            padding: 80px 8%;
+            background: #0c1220;
         }
 
         .section-title {
             text-align: center;
             font-size: 36px;
             font-weight: 800;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
-        .grid {
+        .campaign-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .side-card {
-            padding: 45px;
+        .campaign-card {
+            background: var(--card-bg);
+            border: 1px solid #1e293b;
             border-radius: 16px;
-            background: var(--light);
-            border: 1px solid #e2e8f0;
+            padding: 25px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .side-card.creator-side {
-            border-top: 5px solid var(--primary);
+        .badge-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
         }
 
-        .side-card.brand-side {
-            border-top: 5px solid var(--dark);
+        .brand-name {
+            color: #38bdf8;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
 
-        .side-card h3 {
-            font-size: 24px;
+        .campaign-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .campaign-info {
+            border-top: 1px solid #1e293b;
+            padding-top: 15px;
             margin-bottom: 20px;
         }
 
-        .side-card ul {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .side-card ul li {
-            margin-bottom: 15px;
-            color: var(--gray);
+        .info-row {
             display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .info-row span:first-child { color: var(--text-gray); }
+        .info-row span:last-child { font-weight: 600; }
+
+        .reward { color: var(--accent); font-weight: 800 !important; }
+
+        /* Modal / Pop-up System */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 7, 12, 0.85);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
             align-items: center;
+            z-index: 2000;
         }
 
-        .side-card ul li::before {
-            content: "✦";
-            color: var(--primary);
-            font-weight: bold;
-            margin-right: 12px;
+        .modal-box {
+            background: var(--card-bg);
+            border: 2px solid var(--primary);
+            padding: 40px;
+            border-radius: 24px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 0.3s ease;
         }
 
-        /* Footer */
+        @keyframes fadeIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            color: var(--text-gray);
+            cursor: pointer;
+        }
+
+        .modal-box h3 { font-size: 24px; margin-bottom: 15px; }
+        .modal-box p { color: var(--text-gray); margin-bottom: 30px; }
+
+        .modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .opt-btn {
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s;
+        }
+
+        .opt-register { background: var(--primary); color: white; }
+        .opt-login { background: transparent; color: white; border: 2px solid #334155; }
+        .opt-register:hover { background: #6d28d9; }
+        .opt-login:hover { background: #1e293b; }
+
         footer {
             background: var(--dark);
-            color: white;
+            color: var(--text-gray);
             text-align: center;
             padding: 40px 20px;
             font-size: 14px;
             border-top: 1px solid #1e293b;
         }
 
-        footer p { color: #94a3b8; }
+        footer p span { color: var(--accent); font-weight: bold; }
 
-        /* Responsif Mobile */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero h1 { font-size: 34px; }
             .hero p { font-size: 16px; }
             .cta-group { flex-direction: column; gap: 15px; }
-            .grid { grid-template-columns: 1fr; }
-            .side-card { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVIGASI -->
     <header>
-        <a href="#" class="logo">Satu<span>Hub</span></a>
+        <a href="#" class="logo">Viralin<span>.</span></a>
         <nav class="nav-links">
-            <a href="#fitur">Cara Kerja</a>
-            <a href="https://wa.me" class="btn-nav" target="_blank">Hubungi Kami</a>
+            <a href="#campaign">Campaign Aktif</a>
+            <button class="btn-nav" onclick="openGate('Umum')">Masuk / Daftar</button>
         </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
-        <h1>Jembatan Terbaik Antara <span>Brand Populer</span> & <span>Kreator Berbakat</span></h1>
-        <p>Platform terintegrasi untuk membantu brand meluncurkan campaign viral dan membantu kreator konten mendapatkan monetisasi terbaik.</p>
+        <h1>Jembatan Terbaik Antara <span>Brand Hebat</span> & <span>Kreator Konten Viral</span></h1>
+        <p>Platform masa kini untuk meluncurkan campaign masif sekaligus membuka peluang monetisasi bagi para kreator berbakat.</p>
         <div class="cta-group">
-            <a href="https://wa.me?text=Halo,%20saya%20dari%20Brand%20ingin%20bekerjasama" class="btn btn-brand" target="_blank">Saya Sebuah Brand</a>
-            <a href="https://wa.me?text=Halo,%20saya%20Kreator%20ingin%20bergabung" class="btn btn-creator" target="_blank">Saya Seorang Kreator</a>
+            <button class="btn btn-brand" onclick="openGate('Brand')">Kami Sebuah Brand</button>
+            <button class="btn btn-creator" onclick="openGate('Kreator')">Saya Seorang Kreator</button>
         </div>
     </section>
 
-    <section class="solutions" id="fitur">
-        <h2 class="section-title">Satu Platform, Dua Solusi Hebat</h2>
-        <div class="grid">
-            <!-- Sisi Brand -->
-            <div class="side-card brand-side">
-                <h3>Untuk Brand / Pemilik Bisnis</h3>
-                <ul>
-                    <li>Temukan kreator yang sesuai target audiens produk Anda.</li>
-                    <li>Sistem manajemen *briefing* dan konten terpusat.</li>
-                    <li>Analisis data jangkauan (*reach*) dan keterlibatan (*engagement*).</li>
-                    <li>Sistem pembayaran aman berbasis performa.</li>
-                </ul>
-                <a href="https://wa.me?text=Halo,%20saya%20ingin%20konsultasi%20campaign%20brand" class="btn btn-brand" style="display:block; text-align:center;" target="_blank">Cari Kreator Anda</a>
+    <!-- KONTEN CONTOH CAMPAIGN -->
+    <section class="campaigns" id="campaign">
+        <h2 class="section-title">🔥 Campaign Aktif Saat Ini</h2>
+        <div class="campaign-grid">
+            
+            <!-- Proyek 1 -->
+            <div class="campaign-card">
+                <div>
+                    <span class="badge-status">Tersedia</span>
+                    <p class="brand-name">GlowUp Cosmetics</p>
+                    <h3 class="campaign-title">Review Sunscreen Serum Viral</h3>
+                </div>
+                <div class="campaign-info">
+                    <div class="info-row"><span>Platform:</span><span>TikTok & Reels</span></div>
+                    <div class="info-row"><span>Min. Followers:</span><span>5.000</span></div>
+                    <div class="info-row"><span>Hadiah/Fee:</span><span class="reward">Rp 1.500.000</span></div>
+                </div>
+                <button class="btn btn-creator" style="padding:10px; width:100%; border-radius:10px;" onclick="openGate('Kreator')">Ambil Proyek</button>
             </div>
 
-            <!-- Sisi Creator -->
-            <div class="side-card creator-side">
-                <h3>Untuk Content Creator</h3>
-                <ul>
-                    <li>Akses ke ratusan *campaign* aktif dari brand lokal & global.</li>
-                    <li>Kebebasan menentukan tarif *endorse* sesuai statistik Anda.</li>
-                    <li>Kontrak kerja transparan tanpa potongan biaya tersembunyi.</li>
-                    <li>Komunitas eksklusif dan tips meningkatkan kualitas konten.</li>
-                </ul>
-                <a href="https://wa.me?text=Halo,%20saya%20ingin%20daftar%20sebagai%20kreator" class="btn btn-creator" style="display:block; text-align:center;" target="_blank">Mulai Dapatkan Projek</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 SatuHub Marketplace Agency. Hak Cipta Dilindungi.</p>
-    </footer>
-
-</body>
-  </html>
-  
+            <!-- Proyek 2 -->
+            <div class="campaign-card">
+                <div>
+                    <span class="badge-status">Tersedia</span>
+                    
