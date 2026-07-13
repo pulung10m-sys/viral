@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Viral - Platform Campaign Creator Indonesia</title>
-
-<link rel="stylesheet" href="style.css">
 
 <style>
 
@@ -20,190 +17,183 @@ font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-background:#f4f7fb;
+background:#f5f7fb;
 color:#333;
 }
 
-nav{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:15px 50px;
-
+header{
 background:#1565c0;
-
 position:sticky;
 top:0;
 z-index:999;
+box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
 
+nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
 }
 
 .logo{
-
 font-size:30px;
 font-weight:bold;
 color:white;
-
 }
 
 .menu{
-
 display:flex;
 list-style:none;
 gap:25px;
-
+align-items:center;
 }
 
-.menu li a{
+.menu li{
+position:relative;
+}
 
+.menu a{
 color:white;
 text-decoration:none;
 font-weight:bold;
-transition:.3s;
-
 }
 
-.menu li a:hover{
+.dropdown{
+display:none;
+position:absolute;
+top:40px;
+left:0;
+background:white;
+min-width:200px;
+border-radius:8px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+overflow:hidden;
+}
 
-color:#ffe082;
+.dropdown a{
+display:block;
+padding:12px;
+color:#333;
+}
 
+.dropdown a:hover{
+background:#1565c0;
+color:white;
+}
+
+.menu li:hover .dropdown{
+display:block;
 }
 
 .hero{
-
+background:linear-gradient(135deg,#1565c0,#42a5f5);
 padding:90px 20px;
 text-align:center;
-background:linear-gradient(135deg,#1565c0,#42a5f5);
 color:white;
-
 }
 
 .hero h1{
-
-font-size:48px;
+font-size:46px;
 margin-bottom:20px;
-
 }
 
 .hero p{
-
 font-size:20px;
-margin-bottom:35px;
-
+max-width:700px;
+margin:auto;
+line-height:30px;
 }
 
-.btn{
+.section{
+max-width:1200px;
+margin:60px auto;
+padding:0 20px;
+}
 
-display:inline-block;
-padding:15px 35px;
-background:white;
+.section h2{
+text-align:center;
+margin-bottom:40px;
 color:#1565c0;
-text-decoration:none;
-font-weight:bold;
-border-radius:8px;
-transition:.3s;
-
 }
 
-.btn:hover{
-
-transform:scale(1.05);
-
-}
-
-.fitur{
-
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:25px;
-
-padding:60px;
-
 }
 
 .card{
-
 background:white;
-
-padding:30px;
-
 border-radius:15px;
-
-box-shadow:0 5px 20px rgba(0,0,0,.1);
-
-transition:.3s;
-
-text-align:center;
-
-}
-
-.card:hover{
-
-transform:translateY(-8px);
-
+padding:25px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .card h3{
-
 margin-bottom:15px;
 color:#1565c0;
-
 }
 
-.card p{
+.reward{
+font-size:22px;
+font-weight:bold;
+margin:15px 0;
+color:#2e7d32;
+}
 
-line-height:25px;
+.btn{
+display:inline-block;
+padding:12px 22px;
+background:#1565c0;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
 
+.btn:hover{
+background:#0d47a1;
 }
 
 footer{
-
 margin-top:60px;
-
 background:#222;
-
 color:white;
-
 padding:30px;
-
 text-align:center;
-
 }
 
 @media(max-width:768px){
 
 nav{
-
 flex-direction:column;
-
 }
 
 .menu{
-
-margin-top:15px;
 flex-direction:column;
-text-align:center;
-
+margin-top:15px;
 }
 
 .hero h1{
-
-font-size:34px;
-
+font-size:32px;
 }
 
 .hero p{
-
-font-size:18px;
-
+font-size:17px;
 }
 
-.fitur{
+.dropdown{
+position:static;
+display:block;
+box-shadow:none;
+background:transparent;
+}
 
-padding:20px;
-
+.dropdown a{
+color:white;
+padding:8px;
 }
 
 }
@@ -213,6 +203,8 @@ padding:20px;
 </head>
 
 <body>
+
+<header>
 
 <nav>
 
@@ -224,21 +216,69 @@ Viral
 
 <ul class="menu">
 
-<li><a href="index.html">Home</a></li>
+<li>
+<a href="index.html">Home</a>
+</li>
 
-<li><a href="campaign.html">Campaign</a></li>
+<li>
 
-<li><a href="creator.html">Creator</a></li>
+<a href="campaign.html">
 
-<li><a href="brand.html">Brand</a></li>
+Campaign Publish
 
-<li><a href="login.html">Login</a></li>
+</a>
 
-<li><a href="register.html">Daftar</a></li>
+</li>
+
+<li>
+
+<a href="#">Creator ▾</a>
+
+<div class="dropdown">
+
+<a href="register.html?role=creator">
+
+Daftar Creator
+
+</a>
+
+<a href="login.html?role=creator">
+
+Login Creator
+
+</a>
+
+</div>
+
+</li>
+
+<li>
+
+<a href="#">Brand ▾</a>
+
+<div class="dropdown">
+
+<a href="register.html?role=brand">
+
+Daftar Brand
+
+</a>
+
+<a href="login.html?role=brand">
+
+Login Brand
+
+</a>
+
+</div>
+
+</li>
 
 </ul>
 
 </nav>
+
+</header>
 
 <section class="hero">
 
@@ -250,35 +290,39 @@ Platform Campaign Creator Indonesia
 
 <p>
 
-Menghubungkan Brand dengan Creator untuk menghasilkan konten berkualitas.
+Menghubungkan Brand dengan Content Creator untuk menjalankan campaign digital secara profesional, transparan, dan mudah.
 
 </p>
-
-<a href="register.html" class="btn">
-
-Mulai Sekarang
-
-</a>
 
 </section>
 
-<section class="fitur">
+<section class="section">
+
+<h2>
+
+Campaign Terbaru
+
+</h2>
+
+<div class="grid">
 
 <div class="card">
 
-<h3>📢 Campaign</h3>
+<h3>Review Produk Skincare</h3>
 
-<p>
+<p>Platform : TikTok</p>
 
-Cari campaign terbaru dan mulai menghasilkan uang dari konten.
+<p>Deadline : 31 Agustus 2026</p>
 
-</p>
+<div class="reward">
 
-<br>
+Reward Rp150.000
 
-<a class="btn" href="campaign.html">
+</div>
 
-Lihat Campaign
+<a class="btn" href="campaign-detail.html">
+
+Lihat Brief
 
 </a>
 
@@ -286,19 +330,21 @@ Lihat Campaign
 
 <div class="card">
 
-<h3>🎥 Creator</h3>
+<h3>Promosi Aplikasi Mobile</h3>
 
-<p>
+<p>Platform : Instagram Reels</p>
 
-Gabung campaign, upload video dan dapatkan reward.
+<p>Deadline : 15 September 2026</p>
 
-</p>
+<div class="reward">
 
-<br>
+Reward Rp250.000
 
-<a class="btn" href="creator.html">
+</div>
 
-Masuk Creator
+<a class="btn" href="campaign-detail.html">
+
+Lihat Brief
 
 </a>
 
@@ -306,21 +352,25 @@ Masuk Creator
 
 <div class="card">
 
-<h3>🏢 Brand</h3>
+<h3>Review Makanan</h3>
 
-<p>
+<p>Platform : TikTok</p>
 
-Promosikan produk Anda melalui ribuan content creator Indonesia.
+<p>Deadline : 10 September 2026</p>
 
-</p>
+<div class="reward">
 
-<br>
+Reward Rp300.000
 
-<a class="btn" href="brand.html">
+</div>
 
-Masuk Brand
+<a class="btn" href="campaign-detail.html">
+
+Lihat Brief
 
 </a>
+
+</div>
 
 </div>
 
@@ -328,11 +378,9 @@ Masuk Brand
 
 <footer>
 
-© 2026 Viral Platform Creator Indonesia
+© 2026 Viral Platform Indonesia
 
 </footer>
-
-<script src="script.js"></script>
 
 </body>
 
