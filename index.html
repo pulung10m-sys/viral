@@ -22,10 +22,7 @@ color:#333;
 
 header{
 background:#1565c0;
-position:sticky;
-top:0;
-z-index:999;
-box-shadow:0 2px 10px rgba(0,0,0,.15);
+color:#fff;
 }
 
 nav{
@@ -34,24 +31,23 @@ margin:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 20px;
+padding:18px 20px;
 }
 
 .logo{
-font-size:30px;
+font-size:28px;
 font-weight:bold;
-color:#fff;
 }
 
 .menu{
 display:flex;
 list-style:none;
-gap:30px;
+gap:25px;
 }
 
 .menu a{
+color:white;
 text-decoration:none;
-color:#fff;
 font-weight:bold;
 }
 
@@ -61,71 +57,87 @@ color:#FFD54F;
 
 .hero{
 background:linear-gradient(135deg,#1565c0,#42a5f5);
-color:#fff;
+padding:80px 20px;
 text-align:center;
-padding:90px 20px;
+color:white;
 }
 
 .hero h1{
-font-size:45px;
-margin-bottom:20px;
+font-size:42px;
+margin-bottom:15px;
 }
 
 .hero p{
-font-size:20px;
 max-width:700px;
 margin:auto;
+font-size:18px;
 line-height:30px;
 }
 
-.menu-card{
+.container{
 max-width:1200px;
 margin:60px auto;
+padding:0 20px;
+}
+
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-padding:20px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
 }
 
 .card{
-background:#fff;
-border-radius:15px;
+background:white;
 padding:30px;
+border-radius:15px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
-text-align:center;
 }
 
 .card h2{
-margin-bottom:15px;
 color:#1565c0;
+margin-bottom:15px;
 }
 
 .card p{
-margin-bottom:25px;
 line-height:26px;
+margin-bottom:25px;
 }
 
 .btn{
 display:block;
+text-align:center;
 padding:14px;
-margin:10px 0;
-background:#1565c0;
-color:white;
-text-decoration:none;
+margin-top:12px;
 border-radius:8px;
+text-decoration:none;
 font-weight:bold;
 }
 
-.btn:hover{
+.primary{
+background:#1565c0;
+color:white;
+}
+
+.secondary{
+border:2px solid #1565c0;
+color:#1565c0;
+}
+
+.primary:hover{
 background:#0D47A1;
+}
+
+.secondary:hover{
+background:#1565c0;
+color:white;
 }
 
 footer{
 margin-top:60px;
 background:#222;
-color:#fff;
-padding:25px;
+color:white;
 text-align:center;
+padding:25px;
 }
 
 @media(max-width:768px){
@@ -141,11 +153,7 @@ text-align:center;
 }
 
 .hero h1{
-font-size:32px;
-}
-
-.hero p{
-font-size:17px;
+font-size:30px;
 }
 
 }
@@ -182,31 +190,31 @@ Viral
 
 <section class="hero">
 
-<h1>
-Platform Campaign Creator Indonesia
-</h1>
+<h1>Platform Campaign Creator Indonesia</h1>
 
 <p>
-Menghubungkan Brand dan Creator dalam satu platform campaign digital yang aman, cepat, dan transparan.
+Menghubungkan Brand dengan Content Creator melalui campaign digital yang transparan, mudah, dan profesional.
 </p>
 
 </section>
 
-<section class="menu-card">
+<div class="container">
+
+<div class="grid">
 
 <div class="card">
 
-<h2>👨‍💻 Creator</h2>
+<h2>Creator</h2>
 
 <p>
-Daftar sebagai Content Creator, ikuti campaign, kirim video, dan dapatkan reward.
+Masuk sebagai Content Creator untuk mengikuti campaign yang dipublikasikan oleh Brand.
 </p>
 
-<a class="btn" href="login.html?role=creator">
+<a class="btn primary" href="login.html?role=creator">
 Login Creator
 </a>
 
-<a class="btn" href="register.html?role=creator">
+<a class="btn secondary" href="register.html?role=creator">
 Daftar Creator
 </a>
 
@@ -214,17 +222,17 @@ Daftar Creator
 
 <div class="card">
 
-<h2>🏢 Brand</h2>
+<h2>Brand</h2>
 
 <p>
-Daftarkan perusahaan Anda dan publikasikan campaign untuk ribuan Creator.
+Masuk sebagai Brand untuk membuat dan mempublikasikan campaign kepada para Creator.
 </p>
 
-<a class="btn" href="login.html?role=brand">
+<a class="btn primary" href="login.html?role=brand">
 Login Brand
 </a>
 
-<a class="btn" href="register.html?role=brand">
+<a class="btn secondary" href="register.html?role=brand">
 Daftar Brand
 </a>
 
@@ -232,19 +240,21 @@ Daftar Brand
 
 <div class="card">
 
-<h2>📢 Campaign Publish</h2>
+<h2>Campaign Publish</h2>
 
 <p>
-Lihat campaign terbaru yang dipublikasikan Brand beserta brief, reward, dan deadline.
+Lihat seluruh campaign yang telah dipublikasikan oleh Brand beserta brief, reward, platform, dan deadline.
 </p>
 
-<a class="btn" href="campaign.html">
+<a class="btn primary" href="campaign.html">
 Lihat Campaign
 </a>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 <footer>
 
@@ -253,5 +263,4 @@ Lihat Campaign
 </footer>
 
 </body>
-
 </html>
