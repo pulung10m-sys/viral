@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Viral - Platform Campaign Creator Indonesia</title>
+<title>Viral | Platform Campaign Creator Indonesia</title>
 
 <style>
 
@@ -22,7 +22,10 @@ color:#333;
 
 header{
 background:#1565c0;
-color:#fff;
+position:sticky;
+top:0;
+z-index:999;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 
 nav{
@@ -31,12 +34,13 @@ margin:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 20px;
+padding:18px;
 }
 
 .logo{
-font-size:28px;
+font-size:30px;
 font-weight:bold;
+color:#fff;
 }
 
 .menu{
@@ -45,115 +49,219 @@ list-style:none;
 gap:25px;
 }
 
-.menu a{
+.menu li{
+position:relative;
+}
+
+.menu li a{
 color:white;
 text-decoration:none;
 font-weight:bold;
 }
 
-.menu a:hover{
-color:#FFD54F;
+.dropdown{
+display:none;
+position:absolute;
+top:38px;
+left:0;
+background:#fff;
+min-width:220px;
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.dropdown a{
+display:block;
+padding:12px;
+color:#333!important;
+}
+
+.dropdown a:hover{
+background:#1565c0;
+color:white!important;
+}
+
+.menu li:hover .dropdown{
+display:block;
 }
 
 .hero{
+
 background:linear-gradient(135deg,#1565c0,#42a5f5);
-padding:80px 20px;
+
+padding:90px 20px;
+
 text-align:center;
+
 color:white;
+
 }
 
 .hero h1{
-font-size:42px;
-margin-bottom:15px;
+
+font-size:45px;
+
+margin-bottom:20px;
+
 }
 
 .hero p{
+
+font-size:20px;
+
 max-width:700px;
+
 margin:auto;
-font-size:18px;
+
 line-height:30px;
+
 }
 
 .container{
+
 max-width:1200px;
+
 margin:60px auto;
-padding:0 20px;
+
+padding:20px;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:35px;
+
+color:#1565c0;
+
 }
 
 .grid{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
 gap:25px;
+
 }
 
 .card{
+
 background:white;
-padding:30px;
-border-radius:15px;
+
+padding:25px;
+
+border-radius:12px;
+
 box-shadow:0 5px 20px rgba(0,0,0,.08);
+
 }
 
-.card h2{
-color:#1565c0;
+.card h3{
+
 margin-bottom:15px;
+
+color:#1565c0;
+
 }
 
 .card p{
-line-height:26px;
-margin-bottom:25px;
+
+line-height:25px;
+
+margin-bottom:20px;
+
 }
 
 .btn{
-display:block;
-text-align:center;
-padding:14px;
-margin-top:12px;
-border-radius:8px;
+
+display:inline-block;
+
+padding:12px 22px;
+
+background:#1565c0;
+
+color:white;
+
 text-decoration:none;
-font-weight:bold;
+
+border-radius:8px;
+
+margin-top:8px;
+
 }
 
-.primary{
-background:#1565c0;
-color:white;
-}
+.btn:hover{
 
-.secondary{
-border:2px solid #1565c0;
-color:#1565c0;
-}
+background:#0d47a1;
 
-.primary:hover{
-background:#0D47A1;
-}
-
-.secondary:hover{
-background:#1565c0;
-color:white;
 }
 
 footer{
+
 margin-top:60px;
+
 background:#222;
+
 color:white;
-text-align:center;
+
 padding:25px;
+
+text-align:center;
+
 }
 
 @media(max-width:768px){
 
 nav{
+
 flex-direction:column;
+
 }
 
 .menu{
-margin-top:15px;
+
 flex-direction:column;
+
+margin-top:15px;
+
 text-align:center;
+
+}
+
+.dropdown{
+
+position:static;
+
+display:block;
+
+background:transparent;
+
+box-shadow:none;
+
+}
+
+.dropdown a{
+
+color:white!important;
+
+padding:8px;
+
 }
 
 .hero h1{
-font-size:30px;
+
+font-size:32px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
 }
 
 }
@@ -169,17 +277,105 @@ font-size:30px;
 <nav>
 
 <div class="logo">
+
 Viral
+
 </div>
 
 <ul class="menu">
 
 <li>
-<a href="index.html">Home</a>
+
+<a href="index.html">
+
+Home
+
+</a>
+
 </li>
 
 <li>
-<a href="campaign.html">Campaign Publish</a>
+
+<a href="#">
+
+Campaign Publish ▾
+
+</a>
+
+<div class="dropdown">
+
+<a href="campaign.html?type=ugc">
+
+UGC Campaign
+
+</a>
+
+<a href="campaign.html?type=clipping">
+
+Video Clipping
+
+</a>
+
+<a href="campaign.html">
+
+Semua Campaign
+
+</a>
+
+</div>
+
+</li>
+
+<li>
+
+<a href="#">
+
+Creator ▾
+
+</a>
+
+<div class="dropdown">
+
+<a href="login.html?role=creator">
+
+Login Creator
+
+</a>
+
+<a href="register.html?role=creator">
+
+Daftar Creator
+
+</a>
+
+</div>
+
+</li>
+
+<li>
+
+<a href="#">
+
+Brand ▾
+
+</a>
+
+<div class="dropdown">
+
+<a href="login.html?role=brand">
+
+Login Brand
+
+</a>
+
+<a href="register.html?role=brand">
+
+Daftar Brand
+
+</a>
+
+</div>
+
 </li>
 
 </ul>
@@ -190,64 +386,96 @@ Viral
 
 <section class="hero">
 
-<h1>Platform Campaign Creator Indonesia</h1>
+<h1>
+
+Platform Campaign Creator Indonesia
+
+</h1>
 
 <p>
-Menghubungkan Brand dengan Content Creator melalui campaign digital yang transparan, mudah, dan profesional.
+
+Temukan campaign UGC dan Video Clipping dari berbagai Brand Indonesia.
+
+Brand dapat mempublikasikan brief campaign, sementara Creator dapat bergabung setelah login.
+
 </p>
 
 </section>
 
 <div class="container">
 
+<h2 class="section-title">
+
+Apa yang bisa dilakukan?
+
+</h2>
+
 <div class="grid">
 
 <div class="card">
 
-<h2>Creator</h2>
+<h3>
+
+🎥 Creator
+
+</h3>
 
 <p>
-Masuk sebagai Content Creator untuk mengikuti campaign yang dipublikasikan oleh Brand.
+
+Daftar sebagai Creator, lengkapi profil, pilih campaign, baca brief, kirim hasil pekerjaan, dan terima pembayaran.
+
 </p>
 
-<a class="btn primary" href="login.html?role=creator">
-Login Creator
-</a>
+<a href="login.html?role=creator" class="btn">
 
-<a class="btn secondary" href="register.html?role=creator">
-Daftar Creator
+Masuk Creator
+
 </a>
 
 </div>
 
 <div class="card">
 
-<h2>Brand</h2>
+<h3>
+
+🏢 Brand
+
+</h3>
 
 <p>
-Masuk sebagai Brand untuk membuat dan mempublikasikan campaign kepada para Creator.
+
+Daftar sebagai Brand, lengkapi profil perusahaan, buat campaign, publish brief, dan kelola peserta campaign.
+
 </p>
 
-<a class="btn primary" href="login.html?role=brand">
-Login Brand
-</a>
+<a href="login.html?role=brand" class="btn">
 
-<a class="btn secondary" href="register.html?role=brand">
-Daftar Brand
+Masuk Brand
+
 </a>
 
 </div>
 
 <div class="card">
 
-<h2>Campaign Publish</h2>
+<h3>
+
+📢 Campaign Publish
+
+</h3>
 
 <p>
-Lihat seluruh campaign yang telah dipublikasikan oleh Brand beserta brief, reward, platform, dan deadline.
+
+Lihat seluruh campaign yang dipublikasikan oleh Brand.
+
+Campaign dibagi menjadi UGC dan Video Clipping.
+
 </p>
 
-<a class="btn primary" href="campaign.html">
+<a href="campaign.html" class="btn">
+
 Lihat Campaign
+
 </a>
 
 </div>
@@ -263,4 +491,5 @@ Lihat Campaign
 </footer>
 
 </body>
+
 </html>
