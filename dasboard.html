@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Dashboard Creator</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef3f8;
+}
+
+.sidebar{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:250px;
+
+height:100%;
+
+background:#1565c0;
+
+padding:20px;
+
+}
+
+.sidebar h2{
+
+color:white;
+
+margin-bottom:30px;
+
+}
+
+.sidebar a{
+
+display:block;
+
+color:white;
+
+text-decoration:none;
+
+padding:12px;
+
+margin-bottom:10px;
+
+border-radius:8px;
+
+}
+
+.sidebar a:hover{
+
+background:rgba(255,255,255,.2);
+
+}
+
+.main{
+
+margin-left:270px;
+
+padding:30px;
+
+}
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+
+}
+
+.header h1{
+
+color:#1565c0;
+
+}
+
+.profile{
+
+background:white;
+
+padding:20px;
+
+border-radius:12px;
+
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+
+margin-bottom:25px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.card{
+
+background:white;
+
+padding:20px;
+
+border-radius:12px;
+
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+
+}
+
+.card h3{
+
+color:#1565c0;
+
+margin-bottom:10px;
+
+}
+
+table{
+
+width:100%;
+
+margin-top:30px;
+
+border-collapse:collapse;
+
+background:white;
+
+border-radius:12px;
+
+overflow:hidden;
+
+}
+
+th{
+
+background:#1565c0;
+
+color:white;
+
+padding:15px;
+
+}
+
+td{
+
+padding:15px;
+
+border-bottom:1px solid #ddd;
+
+text-align:center;
+
+}
+
+button{
+
+padding:10px 20px;
+
+background:#1565c0;
+
+border:none;
+
+color:white;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+position:relative;
+
+width:100%;
+
+height:auto;
+
+}
+
+.main{
+
+margin-left:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Viral</h2>
+
+<a href="dashboard.html">🏠 Dashboard</a>
+
+<a href="campaign.html">📢 Campaign</a>
+
+<a href="join.html">📝 Gabung Campaign</a>
+
+<a href="#">📤 Upload Video</a>
+
+<a href="#">💰 Wallet</a>
+
+<a href="#">⚙ Profil</a>
+
+<a href="index.html">🚪 Logout</a>
+
+</div>
+
+<div class="main">
+
+<div class="header">
+
+<h1>Dashboard Creator</h1>
+
+<button>+ Upload Video</button>
+
+</div>
+
+<div class="profile">
+
+<h2>Selamat Datang</h2>
+
+<p>Nama : Creator Demo</p>
+
+<p>Email : creator@email.com</p>
+
+<p>Status : Creator Aktif</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Campaign Aktif</h3>
+
+<h1>3</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Video Pending</h3>
+
+<h1>1</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Video Disetujui</h3>
+
+<h1>5</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Saldo</h3>
+
+<h1>Rp1.250.000</h1>
+
+</div>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Campaign</th>
+
+<th>Status</th>
+
+<th>Reward</th>
+
+</tr>
+
+<tr>
+
+<td>Review Skincare</td>
+
+<td>Pending</td>
+
+<td>Rp150.000</td>
+
+</tr>
+
+<tr>
+
+<td>Promosi Aplikasi</td>
+
+<td>Approved</td>
+
+<td>Rp250.000</td>
+
+</tr>
+
+<tr>
+
+<td>Review Makanan</td>
+
+<td>Paid</td>
+
+<td>Rp300.000</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</body>
+
+</html>
